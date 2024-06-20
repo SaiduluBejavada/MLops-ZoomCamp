@@ -12,7 +12,7 @@ HPO_EXPERIMENT_NAME = "random-forest-hyperopt"
 EXPERIMENT_NAME = "random-forest-best-models"
 RF_PARAMS = ['max_depth', 'n_estimators', 'min_samples_split', 'min_samples_leaf', 'random_state']
 
-mlflow.set_tracking_uri("http://127.0.0.1:5000")
+mlflow.set_tracking_uri("http://127.0.0.1:5001")
 mlflow.set_experiment(EXPERIMENT_NAME)
 mlflow.sklearn.autolog()
 
@@ -73,7 +73,7 @@ def run_register_model(data_path: str, top_n: int):
     best_run = client.search_runs(
         experiment_ids=experiment.experiment_id,
         run_view_type=ViewType.ACTIVE_ONLY,
-        max_results=top_n,
+        max_results=1,
         order_by=["metrics.test_rmse ASC"]
     )[0]
 
