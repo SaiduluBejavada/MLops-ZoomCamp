@@ -6,7 +6,9 @@ import mlflow
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
  
- 
+mlflow.set_tracking_uri("sqlite:///mlflow.db")
+mlflow.set_experiment("random-forest-train")
+
 def load_pickle(filename: str):
     with open(filename, "rb") as f_in:
         return pickle.load(f_in)
