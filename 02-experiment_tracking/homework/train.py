@@ -5,11 +5,13 @@ import mlflow
 
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
+import warnings
+warnings.filterwarnings(action='ignore', module="mlflow.models.model")
 
 
 mlflow.set_tracking_uri("sqlite:///mlflow.db")
 mlflow.set_experiment("random-forest-train")
-
+mlflow.sklearn.autolog()
 
 def load_pickle(filename: str):
     with open(filename, "rb") as f_in:
