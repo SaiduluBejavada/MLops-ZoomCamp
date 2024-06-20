@@ -5,6 +5,7 @@ import mlflow
 
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
+from sklearn.metrics import root_mean_squared_error
 
 
 mlflow.set_tracking_uri("sqlite:///mlflow.db")
