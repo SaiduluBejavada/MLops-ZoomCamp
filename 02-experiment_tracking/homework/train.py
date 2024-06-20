@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
 
 
-mlflow.set_tracking_uri("sqlite:///mlflow.db")
+#mlflow.set_tracking_uri("sqlite:///mlflow.db")
 mlflow.set_experiment("random-forest-train")
 mlflow.sklearn.autolog()
 
