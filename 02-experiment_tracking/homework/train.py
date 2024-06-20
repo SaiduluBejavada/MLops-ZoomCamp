@@ -1,12 +1,13 @@
 import os
 import pickle
+import sklearn
 import click
 import mlflow
 
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error
 from sklearn.metrics import root_mean_squared_error
-
+from sktime.performance_metrics.forecasting import MeanSquaredError 
 
 mlflow.set_tracking_uri("sqlite:///mlflow.db")
 mlflow.set_experiment("random-forest-train")
